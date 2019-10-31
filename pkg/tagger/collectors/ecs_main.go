@@ -42,10 +42,15 @@ type ECSCollector struct {
 
 // Detect tries to connect to the ECS agent
 func (c *ECSCollector) Detect(out chan<- []*TagInfo) (CollectionMode, error) {
+	if ecsutil.IsFargateInstance() {
+		return NoCollection, fmt.Errorf("ECS collector is disabled on Fargate")
+	}
+
 	metaV1, err := ecsmeta.V1()
 	if err != nil {
 		return NoCollection, err
 	}
+
 	c.metaV1 = metaV1
 	c.infoOut = out
 	c.lastExpire = time.Now()
