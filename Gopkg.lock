@@ -9,8 +9,7 @@
     "process",
   ]
   pruneopts = ""
-  revision = "8cebd5a06a08dc27a4d822940f5275b0fa41aa34"
-  version = "4.15.0"
+  revision = "694a756e39dea46b067403a2c0d242ff1a205a7f"
 
 [[projects]]
   digest = "1:e9846ece10d1701db72a5add936bb9edc81353cdccb19be27078ca32f6c3f5d8"
@@ -2215,6 +2214,7 @@
     "k8s.io/client-go/informers/core/v1",
     "k8s.io/client-go/kubernetes",
     "k8s.io/client-go/kubernetes/fake",
+    "k8s.io/client-go/kubernetes/scheme",
     "k8s.io/client-go/kubernetes/typed/core/v1",
     "k8s.io/client-go/listers/autoscaling/v2beta1",
     "k8s.io/client-go/listers/core/v1",

@@ -1,6 +1,6 @@
 [[constraint]]
   name = "github.com/DataDog/agent-payload"
-  version = "4.15.0"
+  branch = "mfpierre/collect-pods"
 
 [[constraint]]
   name = "github.com/google/gopacket"
