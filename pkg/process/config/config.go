@@ -71,7 +71,6 @@ type AgentConfig struct {
 	StatsdHost         string
 	StatsdPort         int
 	ProcessExpVarPort  int
-	KubeClusterName    string
 
 	// System probe collection configuration
 	EnableSystemProbe              bool
@@ -93,6 +92,10 @@ type AgentConfig struct {
 	ClosedChannelSize              int
 	MaxClosedConnectionsBuffered   int
 	MaxConnectionsStateBuffered    int
+
+	// Orchestrator collection configuration
+	OrchestrationCollectionEnabled bool
+	KubeClusterName                string
 
 	// Check config
 	EnabledChecks  []string
@@ -307,8 +310,8 @@ func NewAgentConfig(loggerName config.LoggerName, yamlPath, netYamlPath string) 
 		cfg.Windows.ArgsRefreshInterval = -1
 	}
 
-	// activate the pod collection if we have the cluster name set
-	if canAccessContainers && cfg.KubeClusterName != "" {
+	// activate the pod collection if enabled and we have the cluster name set
+	if canAccessContainers && cfg.OrchestrationCollectionEnabled && cfg.KubeClusterName != "" {
 		cfg.EnabledChecks = append(cfg.EnabledChecks, "pod")
 	}
 
