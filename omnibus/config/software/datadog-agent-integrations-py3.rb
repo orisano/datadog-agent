@@ -264,6 +264,11 @@ build do
 
   end
 
+  unless windows?
+    command "#{pip} uninstall -y kafka-python"
+    command "#{pip} install https://github.com/real-digital/kafka-python/archive/enable-sasl.zip"
+  end
+
   # Run pip check to make sure the agent's python environment is clean, all the dependencies are compatible
   if windows?
     command "#{python} -m pip check"
