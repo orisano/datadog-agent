@@ -194,7 +194,7 @@ func (c *PythonCheck) Configure(data integration.Data, initConfig integration.Da
 	defer C._free(unsafe.Pointer(cInstance))
 	defer C._free(unsafe.Pointer(cCheckID))
 	defer C._free(unsafe.Pointer(cCheckName))
-
+// Random changes
 	var check *C.rtloader_pyobject_t
 	res := C.get_check(rtloader, c.class, cInitConfig, cInstance, cCheckID, cCheckName, &check)
 	var rtLoaderError error
