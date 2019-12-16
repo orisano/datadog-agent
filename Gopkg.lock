@@ -2,15 +2,15 @@
 
 
 [[projects]]
-  digest = "1:3f54dc2cc50afca5305518a339acae1edb79b6ba77515936bf620940b8869599"
+  digest = "1:5f7eca65db5c9765fc70ae1d28ac9dd3871585cb6cd0313111d8775aa4c2fb59"
   name = "github.com/DataDog/agent-payload"
   packages = [
     "gogen",
     "process",
   ]
   pruneopts = ""
-  revision = "1430b85ff06f689dd86af02ad76893695e87f61e"
-  version = "4.16.0"
+  revision = "a886d2a1d9d368560a3c2db480068e7d255983c6"
+  version = "4.18.0"
 
 [[projects]]
   digest = "1:e9846ece10d1701db72a5add936bb9edc81353cdccb19be27078ca32f6c3f5d8"
